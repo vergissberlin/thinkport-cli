@@ -6,6 +6,7 @@ before:
     - go mod tidy
     # you may remove this if you don't need go generate
     - go generate ./...
+
 builds:
   - env:
       - CGO_ENABLED=0
@@ -13,6 +14,8 @@ builds:
       - linux
       - windows
       - darwin
+    main: ./cmd/thinkport
+    binary: thinkport
 
 archives:
   - format: tar.gz
@@ -26,12 +29,12 @@ archives:
       {{- if .Arm }}v{{ .Arm }}{{ end }}
     # use zip for windows archives
     format_overrides:
-    - goos: windows
-      format: zip
+      - goos: windows
+        format: zip
 checksum:
   name_template: 'checksums.txt'
 snapshot:
-  name_template: "{{ incpatch .Version }}-next"
+  name_template: '{{ incpatch .Version }}-next'
 changelog:
   sort: asc
   filters:
@@ -43,3 +46,21 @@ changelog:
 # Feel free to remove those if you don't want/use them.
 # yaml-language-server: $schema=https://goreleaser.com/static/schema.json
 # vim: set ts=2 sw=2 tw=0 fo=cnqoj
+
+release:
+  mode: append
+  github:
+    owner: vergissberlin
+    name: thinkport-cli
+  header: |
+    ## Some title ({{ .Date }})
+
+    Welcome to this new release!
+
+  # Footer for the release body.
+  #
+  # Templates: allowed
+  footer: |
+    ## Thanks!
+
+    Those were the changes on {{ .Tag }}!
