@@ -4,7 +4,10 @@
 !/cmd
 
 !/.gitignore
+!/.goreleaser.yaml
 !/go.mod
 !/go.sum
+!/homebrew.yml
 !/LICENSE
 !/README.md
+
