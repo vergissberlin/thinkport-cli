@@ -69,5 +69,5 @@ func main() {
 	}
 
 	tbl.Print()
-	fmt.Println("\nFound", memberCount, "team members")
+	fmt.Println("\nFound", memberCount, "team members.\n")
 }

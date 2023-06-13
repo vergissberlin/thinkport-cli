@@ -53,14 +53,15 @@ release:
     owner: vergissberlin
     name: thinkport-cli
   header: |
-    ## Some title ({{ .Date }})
+    ## Thinkport CLI release ({{ .Date }})
 
-    Welcome to this new release!
+    🚀Welcome to this new release!
 
   # Footer for the release body.
   #
   # Templates: allowed
   footer: |
-    ## Thanks!
+    *Thinkport Gmbh*
 
-    Those were the changes on {{ .Tag }}!
+    ---
+    Those were the changes on [{{ .Tag }}](https://github.com/vergissberlin/thinkport-cli/releases/tag/{{ .Tag }})!
