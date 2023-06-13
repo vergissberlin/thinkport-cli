@@ -3,6 +3,7 @@
 !/.github
 !/cmd
 
+!/.changie.yaml
 !/.gitignore
 !/.goreleaser.yaml
 !/go.mod
