@@ -6,6 +6,7 @@
 !/.changie.yaml
 !/.gitignore
 !/.goreleaser.yaml
+!/CHANGELOG.md
 !/go.mod
 !/go.sum
 !/homebrew.yml
