@@ -14,7 +14,7 @@ This is a technical experiement and not intended for production use.
 ## 👩‍🔧 Installation
 
 ```bash
-brew install thinkport/tap/thinkport
+brew install vergissberlin/thinkport/thinkport
 ```
 
 ## 👩‍💻 Usage
