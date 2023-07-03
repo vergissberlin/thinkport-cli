@@ -6,5 +6,5 @@ package main
 import "github.com/vergissberlin/thinkport/cmd"
 
 func main() {
-    root.Execute()
+    cmd.Execute()
 }

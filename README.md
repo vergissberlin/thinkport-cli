@@ -33,10 +33,18 @@ thinkport --help
 * [Docker](https://docs.docker.com/get-docker/)
 * [Docker Compose](https://docs.docker.com/compose/install/)
 
-### Build
+### Run development environment
 
 ```bash
 encore run
+```
+
+### Test local build
+
+```bash
+goreleaser build --snapshot --clean
+chmod -R u+x dist
+ ./dist/thinkport_darwin_arm64/thinkport --help
 ```
 
 ### Test
