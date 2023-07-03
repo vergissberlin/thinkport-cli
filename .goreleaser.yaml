@@ -69,11 +69,11 @@ release:
     ---
     Those were the changes on [{{ .Tag }}](https://github.com/vergissberlin/thinkport/releases/tag/{{ .Tag }})!
 
-announce:
-  webhook:
-    enabled: true
-    message_template: '{ "title": "🚀 New release {{.Tag}} of thinkport cli  is out!"}'
-    content_type: 'application/json'
-    endpoint_url: 'https://iot.andrelademann.de/releases/thinkport-cli'
-    headers:
-      User-Agent: 'goreleaser'
+# announce:
+#   webhook:
+#     enabled: true
+#     message_template: '{ "title": "🚀 New release {{.Tag}} of thinkport cli  is out!"}'
+#     content_type: 'application/json'
+#     endpoint_url: 'https://iot.andrelademann.de/releases/thinkport-cli'
+#     headers:
+#       User-Agent: 'goreleaser'
