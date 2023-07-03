@@ -34,7 +34,7 @@ var cache = map[string]interface{}{}
 var rootCmd = &cobra.Command{
 	Use:     "thinkport",
 	Short:   "The thinkport command line interface",
-	Version: GetVersion(),
+	Version: GetLatestVersion(),
 	Long: ` _______ _     _       _                     _   
 |__   __| |   (_)     | |                   | |  
    | |  | |__  _ _ __ | | ___ __   ___  _ __| |_ 
@@ -99,13 +99,13 @@ func GetJSON(url string, target interface{}) error {
 		return err
 	}
 
-	//Add to cache and return
+	// Add to cache and return
 	cache[url] = target
 	return nil
 }
 
 // Get version number of latest release from GitHub API
-func GetVersion() string {
+func GetLatestVersion() string {
 
 	// Check cache
 	if val, ok := cache["version"]; ok {
@@ -137,4 +137,21 @@ func GetVersion() string {
 	// Add to cache and return
 	cache["version"] = data["tag_name"]
 	return data["tag_name"].(string)
+}
+
+func GetCurrentVersionFromGitTag() string {
+
+	// Check cache
+	if val, ok := cache["version"]; ok {
+		return val.(string)
+	}
+
+	// Get version from git tag on cli
+
+	
+
+	if version == "" {
+		return "development"
+	}
+	return version
 }

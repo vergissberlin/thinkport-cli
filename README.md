@@ -1,31 +1,29 @@
-# Thinkport CLI
+# 🌈 Thinkport CLI
 
 This cli tool provides a set of commands related to Thinkport.
 This is a technical experiement and not intended for production use.
 
-## Features
+## 🚀 Features
 
 * [x] List all Thinkport members or a single member
-
-### Planned
-
 * [ ] List all Thinkport projects
 * [ ] Display cooperate identity information
 * [ ] Display contact information
+* [ ] Automatic update check
 
-## Installation
+## 👩‍🔧 Installation
 
 ```bash
 brew install thinkport/tap/thinkport
 ```
 
-## Usage
+## 👩‍💻 Usage
 
 ```bash
 thinkport --help
 ```
 
-## Development
+## 👷‍♀️ Development
 
 ### Prerequisites
 
@@ -39,7 +37,7 @@ thinkport --help
 encore run
 ```
 
-### Test local build
+### 🧪 Test local build
 
 ```bash
 goreleaser build --snapshot --clean
@@ -47,7 +45,7 @@ chmod -R u+x dist
  ./dist/thinkport_darwin_arm64/thinkport --help
 ```
 
-### Test
+### 🧪 Test
 
 ```bash
 encore test ./...
