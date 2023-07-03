@@ -6,10 +6,14 @@ This is a technical experiement and not intended for production use.
 ## 🚀 Features
 
 * [x] List all Thinkport members or a single member
-* [ ] List all Thinkport projects
+* [ ] List all Thinkport products or a single product
 * [ ] Display cooperate identity information
 * [ ] Display contact information
 * [ ] Automatic update check
+* [ ] Automatic update installation
+* [ ] Automatic update notification
+* [ ] Count members
+* [ ] Display news
 
 ## 👩‍🔧 Installation
 

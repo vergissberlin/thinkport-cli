@@ -8,7 +8,6 @@ import (
 
 	"github.com/fatih/color"
 	"github.com/rodaine/table"
-	"github.com/savioxavier/termlink"
 	"github.com/spf13/cobra"
 )
 
@@ -98,16 +97,12 @@ func printMembers(members Members) {
 	headerFmt := color.New(color.FgGreen, color.Underline).SprintfFunc()
 	columnFmt := color.New(color.FgYellow).SprintfFunc()
 
-	tbl := table.New("Name", "Position", "Email", "LinkedIn")
+	tbl := table.New("Name", "Position", "Email")
 	tbl.WithHeaderFormatter(headerFmt).WithFirstColumnFormatter(columnFmt)
 
 	//// Add rows
 	for _, member := range members {
-		// LinkedIn link is optional
-		if member.Linkedin != "" {
-			member.Linkedin = termlink.ColorLink("LinkedIn", member.Linkedin, "blue")
-		}
-		tbl.AddRow(member.Name+" "+member.Surname, member.Position, member.Email, member.Linkedin)
+		tbl.AddRow(member.Name+" "+member.Surname, member.Position, member.Email)
 	}
 
 	//// Print table
