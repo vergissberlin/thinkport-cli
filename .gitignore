@@ -14,5 +14,6 @@
 !/homebrew.yml
 !/LICENSE
 !/main.go
+!/Makefile
 !/README.md
 

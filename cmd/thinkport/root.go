@@ -17,6 +17,8 @@ import (
 
 const apiURL = "https://api.thinkport.andrelademann.de"
 
+var version = ""
+
 // Connection pool
 var client = &http.Client{
 	Transport: &http.Transport{
@@ -30,8 +32,9 @@ var cache = map[string]interface{}{}
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "thinkport",
-	Short: "The thinkport command line interface",
+	Use:     "thinkport",
+	Short:   "The thinkport command line interface",
+	Version: GetVersion(),
 	Long: ` _______ _     _       _                     _   
 |__   __| |   (_)     | |                   | |  
    | |  | |__  _ _ __ | | ___ __   ___  _ __| |_ 
@@ -99,4 +102,39 @@ func GetJSON(url string, target interface{}) error {
 	//Add to cache and return
 	cache[url] = target
 	return nil
+}
+
+// Get version number of latest release from GitHub API
+func GetVersion() string {
+
+	// Check cache
+	if val, ok := cache["version"]; ok {
+		return val.(string)
+	}
+
+	// Get from API
+	res, err := client.Get("https://api.github.com/repos/vergissberlin/thinkport/releases/latest")
+	if err != nil {
+		return version
+	}
+
+	// Read and unmarshal
+	body, err := ioutil.ReadAll(res.Body)
+	if err != nil {
+		return version
+	}
+	var data map[string]interface{}
+	err = json.Unmarshal(body, &data)
+	if err != nil {
+		return version
+	}
+
+	// Check if version is set
+	if data["tag_name"] == nil {
+		return version
+	}
+
+	// Add to cache and return
+	cache["version"] = data["tag_name"]
+	return data["tag_name"].(string)
 }
