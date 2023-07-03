@@ -69,8 +69,6 @@ release:
     ---
     Those were the changes on [{{ .Tag }}](https://github.com/vergissberlin/thinkport/releases/tag/{{ .Tag }})!
 
-
-
 announce:
   webhook:
     enabled: true
