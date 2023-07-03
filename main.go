@@ -3,8 +3,8 @@ Copyright © 2023 André Lademann <alademann@thinkport.digital>
 */
 package main
 
-import "github.com/vergissberlin/thinkport/cmd"
+import "github.com/vergissberlin/thinkport/cmd/thinkport"
 
 func main() {
-    cmd.Execute()
+    thinkport.Execute()
 }
