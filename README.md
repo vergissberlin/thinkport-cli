@@ -40,7 +40,7 @@ encore test ./...
 Releases are made with goreleaser. To create a new release, run:
 
 ```bash
-goreleaser release --rm-dist
+goreleaser release --clean
 ```
 
 ```bash
