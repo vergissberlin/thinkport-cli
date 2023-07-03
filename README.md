@@ -26,5 +26,22 @@ thinkport --help
 ### Build
 
 ```bash
-make build
+encore run
 ```
+
+### Test
+
+```bash
+encore test ./...
+```
+
+### Release
+
+Releases are made with goreleaser. To create a new release, run:
+
+```bash
+goreleaser release --rm-dist
+```
+
+```bash
+
