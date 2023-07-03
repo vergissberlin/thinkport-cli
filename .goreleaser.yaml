@@ -14,7 +14,7 @@ builds:
       - linux
       - windows
       - darwin
-    main: ./cmd/thinkport
+    main: ./cmd/root.go
     binary: thinkport
 
 archives:
@@ -51,11 +51,11 @@ release:
   mode: append
   github:
     owner: vergissberlin
-    name: thinkport-cli
+    name: thinkport
   header: |
     ## Thinkport CLI release ({{ .Date }})
 
-    🚀Welcome to this new release!
+    🚀 Welcome to this new release!
 
   # Footer for the release body.
   #

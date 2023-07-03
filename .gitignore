@@ -11,5 +11,6 @@
 !/go.sum
 !/homebrew.yml
 !/LICENSE
+!/main.go
 !/README.md
 
