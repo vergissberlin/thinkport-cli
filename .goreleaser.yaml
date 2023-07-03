@@ -66,4 +66,4 @@ release:
     *Thinkport Gmbh*
 
     ---
-    Those were the changes on [{{ .Tag }}](https://github.com/vergissberlin/thinkport-cli/releases/tag/{{ .Tag }})!
+    Those were the changes on [{{ .Tag }}](https://github.com/vergissberlin/thinkport/releases/tag/{{ .Tag }})!
