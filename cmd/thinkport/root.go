@@ -17,7 +17,7 @@ import (
 
 const apiURL = "https://api.thinkport.andrelademann.de"
 
-var version = ""
+var version = "0.0.22"
 
 // Connection pool
 var client = &http.Client{
@@ -34,7 +34,7 @@ var cache = map[string]interface{}{}
 var rootCmd = &cobra.Command{
 	Use:     "thinkport",
 	Short:   "The thinkport command line interface",
-	Version: GetLatestVersion(),
+	Version: version,
 	Long: ` _______ _     _       _                     _   
 |__   __| |   (_)     | |                   | |  
    | |  | |__  _ _ __ | | ___ __   ___  _ __| |_ 
@@ -147,8 +147,6 @@ func GetCurrentVersionFromGitTag() string {
 	}
 
 	// Get version from git tag on cli
-
-	
 
 	if version == "" {
 		return "development"
