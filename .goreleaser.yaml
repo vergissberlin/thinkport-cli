@@ -14,7 +14,18 @@ builds:
     goos:
       - linux
       - windows
-      - darwin
+    goarch:
+      - 386
+      - arm
+      - arm64
+    env:
+      - CGO_ENABLED=0
+    ldflags: -s -w
+    hooks:
+      pre:
+        - go generate ./...
+      post:
+        - echo "Build completed!"
 
 archives:
   - format: tar.gz
