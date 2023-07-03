@@ -76,3 +76,11 @@ announce:
     chat_id: 727455512
     message_template: 'Awesome project {{.Tag}} is out!'
     parse_mode: HTML
+
+  webhook:
+    enabled: true
+    message_template: '{ "title": "🚀 New release {{.Tag}} of thinkport cli  is out!"}'
+    content_type: 'application/json'
+    endpoint_url: 'https://iot.andrelademann.de/releases/thinkport-cli'
+    headers:
+      User-Agent: 'goreleaser'
