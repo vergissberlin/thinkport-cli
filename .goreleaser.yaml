@@ -1,21 +1,22 @@
-# This is an example .goreleaser.yml file with some sensible defaults.
-# Make sure to check the documentation at https://goreleaser.com
-before:
-  hooks:
-    # You may remove this if you don't use go modules.
-    - go mod tidy
-    # you may remove this if you don't need go generate
-    - go generate ./...
+project_name: thinkport
 
 builds:
-  - env:
-      - CGO_ENABLED=0
+  - main: cmd/root.go
+    binary: thinkport
     goos:
+      - darwin
       - linux
       - windows
-      - darwin
-    main: ./cmd/root.go
-    binary: thinkport
+    goarch:
+      - amd64
+    env:
+      - CGO_ENABLED=0
+    ldflags: -s -w
+    hooks:
+      pre:
+        - go generate ./...
+      post:
+        - echo "Build completed!"
 
 archives:
   - format: tar.gz
