@@ -10,3 +10,6 @@ build-test: build
 	chmod +x ./dist/$(BINARY)/thinkport
 	./dist/$(BINARY)/thinkport --version
 
+release:
+	@echo "🔧 Release binary..."
+	goreleaser release --clean
