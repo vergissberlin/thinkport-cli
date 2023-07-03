@@ -1,5 +1,5 @@
 /*
-Copyright © 2023 NAME HERE <EMAIL ADDRESS>
+Copyright © 2023 André Lademann <alademann@thinkport.digital>
 */
 package cmd
 
@@ -8,19 +8,41 @@ import (
 	"io/ioutil"
 	"net/http"
 	"os"
+	"time"
 
+	"github.com/savioxavier/termlink"
 	"github.com/spf13/cobra"
 )
 
 const apiURL = "https://api.thinkport.andrelademann.de"
 
+// Connection pool
+var client = &http.Client{
+	Transport: &http.Transport{
+		MaxIdleConns:    100,
+		IdleConnTimeout: 90 * time.Second,
+	},
+}
+
+// API response cache
+var cache = map[string]interface{}{}
+
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "thinkport",
 	Short: "The thinkport command line interface",
-	Long: `
+	Long: ` _______ _     _       _                     _   
+|__   __| |   (_)     | |                   | |  
+   | |  | |__  _ _ __ | | ___ __   ___  _ __| |_ 
+   | |  | '_ \| | '_ \| |/ / '_ \ / _ \| '__| __|
+   | |  | | | | | | | |   <| |_) | (_) | |  | |_ 
+   |_|  |_| |_|_|_| |_|_|\_\ .__/ \___/|_|   \__|
+                           | |                   
+                           |_|                   
+
 Get latest informations about the company.
-You can get also more information about the company on the website https://thinkport.digital.`,
+You can get also more information about the
+company on our website ` + termlink.ColorLink("https://thinkport.digital", "https://thinkport.digital", "blue") + `.`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { },
@@ -44,25 +66,35 @@ func init() {
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
-	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	// rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
 
 // GetJSON gets a JSON from a REST API and unmarshals it into a struct
 func GetJSON(url string, target interface{}) error {
-	// Get JSON from REST API
-	res, err := http.Get(url)
+
+	// Check cache
+	if val, ok := cache[url]; ok {
+		target = val
+		return nil
+	}
+
+	// Get from API
+	res, err := client.Get(url)
 	if err != nil {
 		return err
 	}
-	// Read JSON
+
+	// Read and unmarshal
 	body, err := ioutil.ReadAll(res.Body)
 	if err != nil {
 		return err
 	}
-	// Unmarshal JSON into struct
 	err = json.Unmarshal(body, &target)
 	if err != nil {
 		return err
 	}
+
+	//Add to cache and return
+	cache[url] = target
 	return nil
 }

@@ -2,6 +2,7 @@ project_name: thinkport
 
 builds:
   - main: cmd/root.go
+    no_main_check: true
     binary: thinkport
     goos:
       - darwin

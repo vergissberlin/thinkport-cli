@@ -3,6 +3,16 @@
 This cli tool provides a set of commands related to Thinkport.
 This is a technical experiement and not intended for production use.
 
+## Features
+
+* [x] List all Thinkport members or a single member
+
+### Planned
+
+* [ ] List all Thinkport projects
+* [ ] Display cooperate identity information
+* [ ] Display contact information
+
 ## Installation
 
 ```bash
@@ -19,9 +29,9 @@ thinkport --help
 
 ### Prerequisites
 
-- [Go](https://golang.org/doc/install)
-- [Docker](https://docs.docker.com/get-docker/)
-- [Docker Compose](https://docs.docker.com/compose/install/)
+* [Go](https://golang.org/doc/install)
+* [Docker](https://docs.docker.com/get-docker/)
+* [Docker Compose](https://docs.docker.com/compose/install/)
 
 ### Build
 
@@ -44,4 +54,3 @@ goreleaser release --clean
 ```
 
 ```bash
-

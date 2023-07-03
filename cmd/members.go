@@ -103,7 +103,11 @@ func printMembers(members Members) {
 
 	//// Add rows
 	for _, member := range members {
-		tbl.AddRow(member.Name+" "+member.Surname, member.Position, member.Email, termlink.Link("LinkedIn", member.Linkedin))
+		// LinkedIn link is optional
+		if member.Linkedin != "" {
+			member.Linkedin = termlink.ColorLink("LinkedIn", member.Linkedin, "blue")
+		}
+		tbl.AddRow(member.Name+" "+member.Surname, member.Position, member.Email, member.Linkedin)
 	}
 
 	//// Print table
