@@ -1,11 +1,10 @@
 /*
-Copyright © 2023 NAME HERE <EMAIL ADDRESS>
-
+Copyright © 2023 André Lademann <alademann@thinkport.digital>
 */
 package main
 
-import "thinkport.digital/thinkport/cmd"
+import "github.com/vergissberlin/thinkport/cmd"
 
 func main() {
-	cmd.Execute()
+    root.Execute()
 }

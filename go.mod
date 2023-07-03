@@ -1,4 +1,4 @@
-module thinkport.digital/thinkport
+module github.com/vergissberlin/thinkport
 
 go 1.20
 
