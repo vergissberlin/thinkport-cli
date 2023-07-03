@@ -7,15 +7,15 @@ versionFormat: '## {{.Version}} - {{.Time.Format "2006-01-02"}}'
 kindFormat: '### {{.Kind}}'
 changeFormat: '* {{.Body}}'
 kinds:
-- label: Add
+- label: Added
   auto: minor
-- label: Change
+- label: Changed
   auto: major
 - label: Deprecated
   auto: minor
-- label: Remove
+- label: Removed
   auto: major
-- label: Fix
+- label: Fixed
   auto: patch
 - label: Security
   auto: patch

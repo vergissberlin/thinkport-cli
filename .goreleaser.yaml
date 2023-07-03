@@ -36,11 +36,15 @@ archives:
     format_overrides:
       - goos: windows
         format: zip
+
 checksum:
   name_template: 'checksums.txt'
+
 snapshot:
   name_template: '{{ incpatch .Version }}-next'
+
 changelog:
+  skip: false
   sort: asc
   filters:
     exclude:
@@ -51,6 +55,8 @@ changelog:
 # Feel free to remove those if you don't want/use them.
 # yaml-language-server: $schema=https://goreleaser.com/static/schema.json
 # vim: set ts=2 sw=2 tw=0 fo=cnqoj
+
+
 
 release:
   mode: append
