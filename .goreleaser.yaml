@@ -11,7 +11,8 @@ builds:
     goarch:
       - amd64
       - arm
-      - 386
+      - arm64
+      - x86_64
     env:
       - CGO_ENABLED=0
     ldflags: -s -w
