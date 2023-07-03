@@ -69,14 +69,9 @@ release:
     ---
     Those were the changes on [{{ .Tag }}](https://github.com/vergissberlin/thinkport/releases/tag/{{ .Tag }})!
 
-# .goreleaser.yaml
-announce:
-  telegram:
-    enabled: true
-    chat_id: 727455512
-    message_template: 'Awesome project {{.Tag}} is out!'
-    parse_mode: HTML
 
+
+announce:
   webhook:
     enabled: true
     message_template: '{ "title": "🚀 New release {{.Tag}} of thinkport cli  is out!"}'
