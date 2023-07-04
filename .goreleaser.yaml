@@ -91,5 +91,5 @@ announce:
   webhook:
     enabled: true
     skip_tls_verify: true
-    # message_template: '{ "title": "🚀 New release {{.Tag}} of thinkport cli  is out!","payload": "{{.ReleaseNotes}}","color":"#00FF00"}'
+    message_template: '{ "message": "🚀 **New release {{.Tag}}** of {{ .ProjectName }} is out!","notes": "{{.ReleaseNotes}}","color":"#00FF00"}'
     endpoint_url: 'https://iot.andrelademann.de/releases/thinkport-cli'
