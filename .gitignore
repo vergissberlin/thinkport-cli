@@ -9,6 +9,7 @@
 !/.gitignore
 !/.goreleaser.yaml
 !/CHANGELOG.md
+!/CONTRIBUTING.md
 !/go.mod
 !/go.sum
 !/homebrew.yml
