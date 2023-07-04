@@ -1,5 +1,7 @@
 # 🌈 Thinkport CLI
 
+[![Test](https://github.com/vergissberlin/thinkport/actions/workflows/test.yml/badge.svg)](https://github.com/vergissberlin/thinkport/actions/workflows/test.yml)
+
 This cli tool provides a set of commands related to Thinkport.
 This is a technical experiement and not intended for production use.
 
