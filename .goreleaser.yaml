@@ -86,11 +86,12 @@ brews:
       owner: vergissberlin
       branch: main
       token: '{{ .Env.TAP_GITHUB_TOKEN }}'
-# announce:
-#   webhook:
-#     enabled: true
-#     message_template: '{ "title": "🚀 New release {{.Tag}} of thinkport cli  is out!"}'
-#     content_type: 'application/json'
-#     endpoint_url: 'https://iot.andrelademann.de/releases/thinkport-cli'
-#     headers:
-#       User-Agent: 'goreleaser'
+announce:
+  webhook:
+    enabled: true
+    skip_tls_verify: true
+    message_template: '{ "title": "🚀 New release {{.Tag}} of thinkport cli  is out!"}'
+    content_type: 'application/json'
+    endpoint_url: 'https://iot.andrelademann.de/releases/thinkport-cli'
+    headers:
+      User-Agent: 'goreleaser'
