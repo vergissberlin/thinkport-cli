@@ -6,7 +6,7 @@ package thinkport
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"os"
 	"time"
@@ -17,7 +17,7 @@ import (
 
 const apiURL = "https://api.thinkport.andrelademann.de"
 
-var version = "0.0.22"
+var version = "0.0.32"
 
 // Connection pool
 var client = &http.Client{
@@ -90,7 +90,7 @@ func GetJSON(url string, target interface{}) error {
 	}
 
 	// Read and unmarshal
-	body, err := ioutil.ReadAll(res.Body)
+	body, err := io.ReadAll(res.Body)
 	if err != nil {
 		return err
 	}
@@ -119,7 +119,7 @@ func GetLatestVersion() string {
 	}
 
 	// Read and unmarshal
-	body, err := ioutil.ReadAll(res.Body)
+	body, err := io.ReadAll(res.Body)
 	if err != nil {
 		return version
 	}
@@ -147,7 +147,6 @@ func GetCurrentVersionFromGitTag() string {
 	}
 
 	// Get version from git tag on cli
-
 	if version == "" {
 		return "development"
 	}
