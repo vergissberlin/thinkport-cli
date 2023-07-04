@@ -25,11 +25,11 @@ type Members []Member
 
 // membersCmd represents the members command
 var membersCmd = &cobra.Command{
-	Use:   "members",
+	Use:     "members",
 	Example: "thinkport members [--search | -s <name>]",
-	Aliases: []string{"member", "m"},
+	Aliases: []string{"member", "m", "mem", "mebr"},
 	Version: version,
-	Short: "List all members of the thinkport team",
+	Short:   "List all members of the thinkport team",
 	Long: `Get informations about the thinkport team. For example:
 thinkport members - Get all members of the thinkport team`,
 	Run: func(cmd *cobra.Command, args []string) {
