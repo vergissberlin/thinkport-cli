@@ -5,10 +5,12 @@ package thinkport
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/fatih/color"
 	"github.com/rodaine/table"
 	"github.com/spf13/cobra"
+	"github.com/spf13/cobra/doc"
 )
 
 type Member struct {
@@ -24,6 +26,9 @@ type Members []Member
 // membersCmd represents the members command
 var membersCmd = &cobra.Command{
 	Use:   "members",
+	Example: "thinkport members [--search | -s <name>]",
+	Aliases: []string{"member", "m"},
+	Version: version,
 	Short: "List all members of the thinkport team",
 	Long: `Get informations about the thinkport team. For example:
 thinkport members - Get all members of the thinkport team`,
@@ -34,12 +39,23 @@ thinkport members - Get all members of the thinkport team`,
 		} else {
 			getMember(cmd.Flag("search").Value.String())
 		}
-
 	},
 }
 
 func init() {
 	rootCmd.AddCommand(membersCmd)
+
+	err := doc.GenMarkdownTree(membersCmd, "./docs")
+	if err != nil {
+		log.Fatal(err)
+	}
+	docHeader := &doc.GenManHeader{
+		Title: "Thinkport CLI",
+	}
+	err = doc.GenManTree(membersCmd, docHeader, "./docs")
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	// Here you will define your flags and configuration settings.
 

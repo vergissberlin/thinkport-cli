@@ -17,7 +17,7 @@ import (
 
 const apiURL = "https://api.thinkport.andrelademann.de"
 
-var version = "0.0.46"
+var version = "0.0.47"
 
 // Connection pool
 var client = &http.Client{
@@ -137,18 +137,4 @@ func GetLatestVersion() string {
 	// Add to cache and return
 	cache["version"] = data["tag_name"]
 	return data["tag_name"].(string)
-}
-
-func GetCurrentVersionFromGitTag() string {
-
-	// Check cache
-	if val, ok := cache["version"]; ok {
-		return val.(string)
-	}
-
-	// Get version from git tag on cli
-	if version == "" {
-		return "development"
-	}
-	return version
 }
