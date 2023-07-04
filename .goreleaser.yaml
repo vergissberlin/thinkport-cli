@@ -61,7 +61,7 @@ release:
 
     🚀 Welcome to this new release!
 
-    Run `brew updatge && brew upgrade thinkport` to get the latest version.
+    Run `brew update && brew upgrade thinkport` to get the latest version.
     With `thinkport -v` you can check the version you are running.
 
   # Footer for the release body.
