@@ -69,6 +69,12 @@ release:
     ---
     Those were the changes on [{{ .Tag }}](https://github.com/vergissberlin/thinkport/releases/tag/{{ .Tag }})!
 
+brews:
+- name: thinkport
+  tap:
+    owner: vergissberlin
+    name: homebrew-tap
+    token: "{{ .Env.TAP_GITHUB_TOKEN }}"
 #brews:
 #  - # Name of the recipe
 #    #
