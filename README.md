@@ -5,6 +5,8 @@
 This cli tool provides a set of commands related to Thinkport.
 This is a technical experiement and not intended for production use.
 
+![Screenshot](assets/screenshot.png)
+
 ## 🚀 Features
 
 * [x] List all Thinkport members or a single member
