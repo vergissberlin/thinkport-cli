@@ -57,21 +57,20 @@ release:
     name: thinkport
   header: |
     ## Thinkport CLI release
-    _({{ .Date }})_
+    _{{ .Date }}_
 
     🚀 Welcome to this new release!
 
-    Run `brew upgrade thinkport` to get the latest version.
+    Run `brew updatge && brew upgrade thinkport` to get the latest version.
     With `thinkport -v` you can check the version you are running.
 
   # Footer for the release body.
   #
   # Templates: allowed
   footer: |
-    *[Thinkport Gmbh](https://thinkport.digital)*
 
     ---
-    Those were the changes on [{{ .Tag }}](https://github.com/vergissberlin/thinkport/releases/tag/{{ .Tag }})!
+    *[Thinkport Gmbh](https://thinkport.digital)* | Those were the changes on [{{ .Tag }}](https://github.com/vergissberlin/thinkport/releases/tag/{{ .Tag }})!
 
 brews:
   - name: thinkport

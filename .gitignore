@@ -5,7 +5,6 @@
 !/assets
 !/cmd
 
-!/.changie.yaml
 !/.gitignore
 !/.goreleaser.yaml
 !/CHANGELOG.md
