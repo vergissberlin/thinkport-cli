@@ -80,17 +80,13 @@ brews:
     email: vergissberlin@googlemail.com
   folder: Formula
   test: |
-         system "#{bin}/thinkport -v"
+    system "#{bin}/thinkport -v"
 
-  tap:
+  repository:
     owner: vergissberlin
     name: homebrew-tap
+    branch: main
     token: "{{ .Env.TAP_GITHUB_TOKEN }}"
-  repository:
-      owner: vergissberlin
-      name: homebrew-tap
-      branch: main
-      token: "{{ .Env.TAP_GITHUB_TOKEN }}"
 
 #brews:
 #  - # Name of the recipe
