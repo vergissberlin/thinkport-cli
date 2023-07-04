@@ -58,7 +58,7 @@ release:
   header: |
     ## Thinkport CLI release
     _({{ .Date }})_
- 
+
     🚀 Welcome to this new release!
 
   # Footer for the release body.
@@ -91,7 +91,7 @@ announce:
   webhook:
     enabled: true
     skip_tls_verify: true
-    message_template: '{ "title": "🚀 New release {{.Tag}} of thinkport cli  is out! ","payload": "{{.ReleaseNotes}}","color":"#00FF00"}'      
+    # message_template: '{ "title": "🚀 New release {{.Tag}} of thinkport cli  is out!","payload": "{{.ReleaseNotes}}","color":"#00FF00"}'
     content_type: 'application/json'
     endpoint_url: 'https://iot.andrelademann.de/releases/thinkport-cli'
     headers:
