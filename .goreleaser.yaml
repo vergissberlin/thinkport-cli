@@ -70,24 +70,22 @@ release:
     Those were the changes on [{{ .Tag }}](https://github.com/vergissberlin/thinkport/releases/tag/{{ .Tag }})!
 
 brews:
-- 
-  name: thinkport
-  homepage: 'https://github.com/vergissberlin/thinkport'
-  description: 'This cli tool provides a set of commands related to Thinkport. This is a technical experiement and not intended for production use.'
-  license: 'MIT'
-  commit_author:
-    name: vergissberlin
-    email: vergissberlin@googlemail.com
-  folder: Formula
-  test: |
-    system "#{bin}/thinkport -v"
+  - name: thinkport
+    homepage: 'https://github.com/vergissberlin/thinkport'
+    description: 'This cli tool provides a set of commands related to Thinkport. This is a technical experiement and not intended for production use.'
+    license: 'MIT'
+    commit_author:
+      name: vergissberlin
+      email: vergissberlin@googlemail.com
+    folder: Formula
+    test: |
+      system "#{bin}/thinkport -v"
 
-  repository:
-    owner: vergissberlin
-    name: homebrew-tap
-    branch: main
-    token: "{{ .Env.TAP_GITHUB_TOKEN }}"
-
+    repository:
+      owner: vergissberlin
+      name: homebrew-tap
+      branch: main
+      token: '{{ .Env.TAP_GITHUB_TOKEN }}'
 #brews:
 #  - # Name of the recipe
 #    #
