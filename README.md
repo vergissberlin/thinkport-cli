@@ -7,6 +7,10 @@ This is a technical experiement and not intended for production use.
 
 ![Screenshot](assets/screenshot.png)
 
+```bash
+brew install vergissberlin/tap/thinkport
+```
+
 ## 🚀 Features
 
 * [x] List all Thinkport members or a single member
