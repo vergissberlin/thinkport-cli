@@ -138,17 +138,3 @@ func GetLatestVersion() string {
 	cache["version"] = data["tag_name"]
 	return data["tag_name"].(string)
 }
-
-func GetCurrentVersionFromGitTag() string {
-
-	// Check cache
-	if val, ok := cache["version"]; ok {
-		return val.(string)
-	}
-
-	// Get version from git tag on cli
-	if version == "" {
-		return "development"
-	}
-	return version
-}
