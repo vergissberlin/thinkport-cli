@@ -15,17 +15,26 @@ This is a technical experiement and not intended for production use.
 * [ ] Count members
 * [ ] Display news
 
-## 👩‍🔧 Installation
+## 📀 Installation
+
+### Homebrew (macOS and Linux)
 
 ```bash
-brew install vergissberlin/thinkport/thinkport
+brew install vergissberlin/tap/thinkport
 ```
+
+### Manual (Windows, macOS, Linux)
+
+Download the latest release from the [releases page](https://github.com/vergissberlin/thinkport/releases) and install it manually.
 
 ## 👩‍💻 Usage
 
 ```bash
 thinkport --help
+thinkport members
 ```
+
+This will list all Thinkport members.
 
 ## 👷‍♀️ Development
 
