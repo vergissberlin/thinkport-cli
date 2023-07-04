@@ -61,6 +61,9 @@ release:
 
     🚀 Welcome to this new release!
 
+    Run `brew upgrade thinkport` to get the latest version.
+    With `thinkport -v` you can check the version you are running.
+
   # Footer for the release body.
   #
   # Templates: allowed
@@ -91,5 +94,5 @@ announce:
   webhook:
     enabled: true
     skip_tls_verify: true
-    message_template: '{ "message": "🚀 **New release {{.Tag}}** of {{ .ProjectName }} is out!","notes": "{{.ReleaseNotes}}","color":"#00FF00"}'
+    message_template: '{ "message": "🚀 *New release {{.Tag}}* of {{ .ProjectName }} is out!","notes": "{{.ReleaseNotes}}","color":"#00FF00"}'
     endpoint_url: 'https://iot.andrelademann.de/releases/thinkport-cli'
