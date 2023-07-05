@@ -1,16 +1,28 @@
 # Contributing
 
-
 ### Prerequisites
 
 * [Go](https://golang.org/doc/install)
+* [Cobra CLI](https://cobra.dev)
 * [Docker](https://docs.docker.com/get-docker/)
 * [Docker Compose](https://docs.docker.com/compose/install/)
 
 ### Run development environment
 
 ```bash
-encore run
+go run main.go --help
+```
+
+### Add new command
+
+```bash
+cobra add <command>
+```
+
+### Generate documentation
+
+```bash
+cobra gen docs
 ```
 
 ### 🧪 Test local build

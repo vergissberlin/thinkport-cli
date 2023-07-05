@@ -17,7 +17,7 @@ import (
 
 const apiURL = "https://api.thinkport.andrelademann.de"
 
-var version = "0.0.52"
+var version = "0.0.53"
 
 // Connection pool
 var client = &http.Client{
