@@ -47,7 +47,7 @@ changelog:
 
 # The lines beneath this are called `modelines`. See `:help modeline`
 # Feel free to remove those if you don't want/use them.
-# yaml-language-server: $schema=https://goreleaser.com/static/schema.json
+# yaml-language-server: $schema=https://thinkport.com/static/schema.json
 # vim: set ts=2 sw=2 tw=0 fo=cnqoj
 
 release:
@@ -82,6 +82,14 @@ brews:
       name: vergissberlin
       email: vergissberlin@googlemail.com
     folder: Formula
+    goarm: '7'
+    install: |-
+      bin.install "thinkport"
+      bash_completion.install "completions/thinkport.bash" => "thinkport"
+      zsh_completion.install "completions/thinkport.zsh" => "_thinkport"
+      fish_completion.install "completions/thinkport.fish"
+      man1.install "docs/thinkport-members.1"
+
     test: |
       system "#{bin}/thinkport -v"
     repository:
@@ -89,6 +97,7 @@ brews:
       owner: vergissberlin
       branch: main
       token: '{{ .Env.TAP_GITHUB_TOKEN }}'
+
 announce:
   webhook:
     enabled: true
