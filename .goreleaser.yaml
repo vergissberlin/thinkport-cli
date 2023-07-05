@@ -33,7 +33,6 @@ archives:
     files:
       - LICENSE
       - README.md
-      - thinkport
       - docs/*
     builds_info:
       group: root
