@@ -30,6 +30,16 @@ archives:
     format_overrides:
       - goos: windows
         format: zip
+    files:
+      - LICENSE
+      - README.md
+      - thinkport
+      - docs/thinkport-members.1
+    perms:
+      - files: thinkport
+        mode: 0755
+      - files: docs/thinkport-members.1
+        mode: 0644
 
 checksum:
   name_template: 'checksums.txt'
@@ -85,9 +95,6 @@ brews:
     goarm: '7'
     install: |-
       bin.install "thinkport"
-      bash_completion.install "completions/thinkport.bash" => "thinkport"
-      zsh_completion.install "completions/thinkport.zsh" => "_thinkport"
-      fish_completion.install "completions/thinkport.fish"
       man1.install "docs/thinkport-members.1"
 
     test: |
