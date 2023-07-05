@@ -56,7 +56,7 @@ changelog:
 
 # The lines beneath this are called `modelines`. See `:help modeline`
 # Feel free to remove those if you don't want/use them.
-# yaml-language-server: $schema=https://thinkport.com/static/schema.json
+# yaml-language-server: $schema=https://goreleaser.com/static/schema.json
 # vim: set ts=2 sw=2 tw=0 fo=cnqoj
 
 release:
@@ -92,9 +92,6 @@ brews:
       email: vergissberlin@googlemail.com
     folder: Formula
     goarm: '7'
-    install: |
-      bin.install "thinkport"
-
     test: |
       system "#{bin}/thinkport -v"
     repository:
