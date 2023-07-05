@@ -34,12 +34,11 @@ archives:
       - LICENSE
       - README.md
       - thinkport
-      - docs/thinkport-members.1
-    perms:
-      - files: thinkport
-        mode: 0755
-      - files: docs/thinkport-members.1
-        mode: 0644
+      - docs/*
+    builds_info:
+      group: root
+      owner: root
+      mode: 0644
 
 checksum:
   name_template: 'checksums.txt'
@@ -93,9 +92,8 @@ brews:
       email: vergissberlin@googlemail.com
     folder: Formula
     goarm: '7'
-    install: |-
+    install: |
       bin.install "thinkport"
-      man1.install "docs/thinkport-members.1"
 
     test: |
       system "#{bin}/thinkport -v"

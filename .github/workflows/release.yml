@@ -11,6 +11,8 @@ permissions:
 
 jobs:
   goreleaser:
+    # The job depends on test job, so it will run only if tests pass
+    name: goreleaser
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
