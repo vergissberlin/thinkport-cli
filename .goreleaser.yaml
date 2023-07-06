@@ -33,7 +33,7 @@ archives:
     files:
       - LICENSE
       - README.md
-      - docs/*
+      - docs/**/*
     builds_info:
       group: root
       owner: root
