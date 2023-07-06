@@ -45,18 +45,6 @@ thinkport members - Get all members of the thinkport team`,
 func init() {
 	rootCmd.AddCommand(membersCmd)
 
-	err := doc.GenMarkdownTree(membersCmd, "./docs")
-	if err != nil {
-		log.Fatal(err)
-	}
-	docHeader := &doc.GenManHeader{
-		Title: "Thinkport CLI",
-	}
-	err = doc.GenManTree(membersCmd, docHeader, "./docs")
-	if err != nil {
-		log.Fatal(err)
-	}
-
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command
@@ -123,4 +111,18 @@ func printMembers(members Members) {
 
 	//// Print table
 	tbl.Print()
+}
+
+func generateDocumentation()  {
+	err := doc.GenMarkdownTree(membersCmd, "./docs")
+	if err != nil {
+		log.Fatal(err)
+	}
+	docHeader := &doc.GenManHeader{
+		Title: "Thinkport CLI",
+	}
+	err = doc.GenManTree(membersCmd, docHeader, "./docs")
+	if err != nil {
+		log.Fatal(err)
+	}
 }
