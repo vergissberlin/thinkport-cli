@@ -55,7 +55,6 @@ snapshot:
   name_template: '{{ incpatch .Version }}-next'
 
 changelog:
-  skip: false
   sort: asc
   filters:
     exclude:
@@ -98,7 +97,6 @@ brews:
     commit_author:
       name: vergissberlin
       email: vergissberlin@googlemail.com
-    folder: Formula
     goarm: '7'
     test: |
       system "#{bin}/thinkport -v"
