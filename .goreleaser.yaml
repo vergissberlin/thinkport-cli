@@ -1,5 +1,6 @@
 project_name: thinkport
 report_sizes: true
+version: 2
 
 before:
   hooks:
@@ -15,11 +16,9 @@ builds:
       - linux
       - windows
     goarch:
-      - 386
+      - "386"
       - arm
       - arm64
-    env:
-      - CGO_ENABLED=0
     ldflags: -s -w
     hooks:
       pre:
