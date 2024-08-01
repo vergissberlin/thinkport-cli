@@ -15,7 +15,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-const apiURL = "https://api.thinkport.andrelademann.de"
+const apiURL = "https://production-helloworld-5w4i.encr.app"
 
 var version = "0.0.57"
 

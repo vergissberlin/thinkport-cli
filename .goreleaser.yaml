@@ -1,5 +1,6 @@
 project_name: thinkport
 report_sizes: true
+version: 2
 
 before:
   hooks:
@@ -14,7 +15,16 @@ builds:
     goos:
       - linux
       - windows
-      - darwin
+    goarch:
+      - "386"
+      - arm
+      - arm64
+    ldflags: -s -w
+    hooks:
+      pre:
+        - go generate ./...
+      post:
+        - echo "Build completed!"
 
 archives:
   - format: tar.gz
@@ -45,7 +55,6 @@ snapshot:
   name_template: '{{ incpatch .Version }}-next'
 
 changelog:
-  skip: false
   sort: asc
   filters:
     exclude:
@@ -88,7 +97,6 @@ brews:
     commit_author:
       name: vergissberlin
       email: vergissberlin@googlemail.com
-    folder: Formula
     goarm: '7'
     test: |
       system "#{bin}/thinkport -v"
