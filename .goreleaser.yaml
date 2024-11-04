@@ -90,6 +90,7 @@ release:
 
 brews:
   - name: thinkport
+    version: '{{ .Version }}'
     homepage: 'https://github.com/vergissberlin/thinkport'
     description: 'This cli tool provides a set of commands related to Thinkport. This is a technical experiement and not intended for production use.'
     caveats: 'It uses a http client to collect the data. Internet connection is required.'
