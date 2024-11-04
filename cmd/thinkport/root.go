@@ -14,7 +14,7 @@ import (
 
 const apiURL = "https://production-helloworld-5w4i.encr.app"
 
-var version = "0.0.77"
+var version = "0.0.78"
 
 // Connection pool
 var client = &http.Client{
