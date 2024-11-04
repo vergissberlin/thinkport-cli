@@ -11,5 +11,6 @@ build-test: build
 	./dist/$(BINARY)/thinkport --version
 
 release:
-	@echo "🔧 Release binary..."
+	@echo "🔧 Release binary …"
+	unset GITLAB_TOKEN
 	goreleaser release --clean

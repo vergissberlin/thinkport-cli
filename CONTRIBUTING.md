@@ -44,5 +44,6 @@ encore test ./...
 Releases are made with goreleaser. To create a new release, run:
 
 ```bash
+unset GITLAB_TOKEN
 goreleaser release --clean
 ```
