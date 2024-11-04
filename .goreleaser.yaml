@@ -98,6 +98,7 @@ brews:
       name: vergissberlin
       email: vergissberlin@googlemail.com
     goarm: '7'
+    directory: Formula
     test: |
       system "#{bin}/thinkport", "--version"
     repository:
@@ -114,4 +115,4 @@ announce:
     enabled: true
     skip_tls_verify: true
     message_template: '{ "message": "🚀 *New release {{.Tag}}* of {{ .ProjectName }} is out!\nCheck it out at {{ .ReleaseURL }}.\nYou can upgrade with `brew update && brew upgrade thinkport`. "}'
-    endpoint_url: 'https://iot.andrelademann.de/releases/thinkport-cli'
+    endpoint_url: 'https://iot.andrelademann.de/releases/thinkport'
