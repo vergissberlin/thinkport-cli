@@ -54,9 +54,6 @@ checksum:
 snapshot:
   version_template: '{{ incpatch .Version }}-next'
 
-nightly:
-  version_template: '{{ .Version }}-nightly'
-
 changelog:
   sort: asc
   filters:
@@ -97,6 +94,10 @@ brews:
     description: 'This cli tool provides a set of commands related to Thinkport. This is a technical experiement and not intended for production use.'
     caveats: 'It uses a http client to collect the data. Internet connection is required.'
     license: 'MIT'
+    tap:
+      owner: vergissberlin
+      name: homebrew-tap
+      token: "{{ .Env.TAP_GITHUB_TOKEN }}"
     commit_author:
       name: vergissberlin
       email: vergissberlin@googlemail.com
