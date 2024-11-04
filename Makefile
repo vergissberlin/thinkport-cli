@@ -12,5 +12,4 @@ build-test: build
 
 release:
 	@echo "🔧 Release binary …"
-	unset GITLAB_TOKEN
 	goreleaser release --clean

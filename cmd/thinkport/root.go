@@ -1,6 +1,3 @@
-/*
-Copyright © 2023 André Lademann <alademann@thinkport.digital>
-*/
 package thinkport
 
 import (
@@ -17,7 +14,7 @@ import (
 
 const apiURL = "https://production-helloworld-5w4i.encr.app"
 
-var version = "0.0.57"
+var version = "0.0.62"
 
 // Connection pool
 var client = &http.Client{
