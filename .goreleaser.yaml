@@ -92,19 +92,25 @@ brews:
   - name: thinkport
     homepage: 'https://github.com/vergissberlin/thinkport'
     description: 'This cli tool provides a set of commands related to Thinkport. This is a technical experiement and not intended for production use.'
-    caveats: 'It uses a http client to collect the data. Internetconnection is required.'
+    tap:
+      owner: vergissberlin
+      name: homebrew-tap
+    caveats: 'It uses a http client to collect the data. Internet connection is required.'
     license: 'MIT'
     commit_author:
       name: vergissberlin
       email: vergissberlin@googlemail.com
     goarm: '7'
     test: |
-      system "#{bin}/thinkport -v"
+      system "#{bin}/thinkport", "--version"
     repository:
       name: homebrew-tap
       owner: vergissberlin
       branch: main
       token: '{{ .Env.TAP_GITHUB_TOKEN }}'
+    url_template: "https://github.com/vergissberlin/thinkport/releases/download/{{ .Version }}/thinkport_{{ .Os }}_{{ .Arch }}.tar.gz"
+    install: |
+      bin.install "thinkport"
 
 announce:
   webhook:
