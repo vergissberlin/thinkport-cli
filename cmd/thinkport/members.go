@@ -28,7 +28,7 @@ var membersCmd = &cobra.Command{
 	Aliases: []string{"member", "m", "mem", "mebr"},
 	Version: version,
 	Short:   "List all members of the thinkport team",
-	Long: `Get informations about the thinkport team. For example:
+	Long: `Get information about the thinkport team. For example:
 thinkport members - Get all members of the thinkport team`,
 	Run: func(cmd *cobra.Command, args []string) {
 		// If there is no flag, get all members
@@ -99,12 +99,12 @@ func printMembers(members Members) {
 	headerFmt := color.New(color.FgGreen, color.Underline).SprintfFunc()
 	columnFmt := color.New(color.FgYellow).SprintfFunc()
 
-	tbl := table.New("Name", "Position", "Email")
+	tbl := table.New("Name", "Position")
 	tbl.WithHeaderFormatter(headerFmt).WithFirstColumnFormatter(columnFmt)
 
 	//// Add rows
 	for _, member := range members {
-		tbl.AddRow(member.Name+" "+member.Surname, member.Position, member.Email)
+		tbl.AddRow(member.Name+" "+member.Surname, member.Position)
 	}
 
 	//// Print table
