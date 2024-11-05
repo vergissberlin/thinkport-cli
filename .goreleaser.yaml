@@ -121,7 +121,7 @@ announce:
       - type: section
         text:
           type: mrkdwn
-          text: "🚀 *Release {{.Tag}} of Tinkport CLI is out!*"
+          text: "🚀 *Release {{.Tag}} of {{.ProjectName }} CLI is out!*"
 
       - type: section
         text:
