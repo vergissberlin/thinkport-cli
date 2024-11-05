@@ -107,8 +107,8 @@ announce:
   webhook:
     enabled: true
     skip_tls_verify: true
-    message_template: '{ "message": "🚀 *New release {{.Tag}}* of {{ 
-    .ProjectName }} is out!\nCheck it out at {{ .ReleaseURL }}.\nYou can 
+    message_template: '{ "message": "🚀 *New release {{.Tag}}* of 
+    {{.ProjectName }} is out!\nCheck it out at {{ .ReleaseURL }}.\nYou can 
     install with `brew install vergissberlin/tap/thinkport` and upgrade 
     with `brew update && brew upgrade thinkport`. "}'
     endpoint_url: 'https://iot.andrelademann.de/releases/thinkport-cli'
